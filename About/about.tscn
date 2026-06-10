@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bko4052yomywp"]
+
+[ext_resource type="Script" uid="uid://46epr0e2hxal" path="res://About/about.gd" id="1_uooo0"]
+
+[node name="About" type="Control" unique_id=949941930]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uooo0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1353191527]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1644374630]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="title" type="Label" parent="VBoxContainer/MarginContainer" unique_id=1395744210]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 60
+text = "about"
+horizontal_alignment = 1
+autowrap_trim_flags = 0
+justification_flags = 0
+uppercase = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer" unique_id=759047954]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/MarginContainer2" unique_id=227673218]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "4Key Controller is an mobile app to control & play PC games from your phone. Currently only support 4 buttons, ideal for playing 4-key rhythm games.
+
+
+[center][color=#D13213]How To Use?[/color][/center]
+0. Make sure both your Phone and PC are on the same WI-FI network.
+
+1. Install [color=#81dd40][url=https://github.com/ariwishrc/4Key-Server]4Key Server[/url][/color] on your PC.
+
+2. Run the [color=#81dd40][url=https://github.com/ariwishrc/4Key-Server]4Key Server[/url][/color] and set Port and Keybinds (Make sure the port matches the port in this app (default: 8000))
+
+3. In this app, go to Settings and change the IP to your PC's local IP address (shown in the [color=#81dd40][url=https://github.com/ariwishrc/4Key-Server]4Key Server[/url][/color])
+
+4. Done! Enjoy playing!
+
+
+[center][color=#D13213]Troubleshooting[/color][/center]
+If the server isn't receiving input, the port may be blocked by your firewall. See the [color=#81dd40][url=https://github.com/ariwishrc/4Key-Controller]4Key Controller GitHub page[/url][/color] for instructions on how to unblock it."
+autowrap_mode = 2
+
+[node name="back" type="Button" parent="." unique_id=1062757272]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[connection signal="meta_clicked" from="VBoxContainer/MarginContainer2/RichTextLabel" to="." method="_on_rich_text_label_meta_clicked"]
+[connection signal="button_down" from="back" to="." method="_on_back_button_down"]

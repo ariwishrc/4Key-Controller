@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://wscun40rrfey"]
+
+[ext_resource type="Script" uid="uid://d187q0ocu7pfv" path="res://Controller/controller.gd" id="1_xhap2"]
+[ext_resource type="Script" uid="uid://cv8ybvb0n8xhn" path="res://Controller/settings.gd" id="2_xa5oe"]
+[ext_resource type="Script" uid="uid://ctk3deex4g1vt" path="res://Controller/about.gd" id="3_45i6d"]
+[ext_resource type="Texture2D" uid="uid://cygn2h11bmao7" path="res://Assets/Arrows/left_.png" id="3_vgpjl"]
+[ext_resource type="Texture2D" uid="uid://cviv7plfcwds6" path="res://Assets/Other/drag.png" id="3_vh704"]
+[ext_resource type="Texture2D" uid="uid://ch21ahp81pn4b" path="res://Assets/Arrows/down_.png" id="5_vgpjl"]
+[ext_resource type="Texture2D" uid="uid://35veun4viked" path="res://Assets/Arrows/up_.png" id="7_x0gpg"]
+[ext_resource type="Texture2D" uid="uid://o44tmmslq28s" path="res://Assets/Arrows/right_.png" id="9_tqt1v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evi37"]
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.22878492, 0.3122647, 0.25676623, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vh704"]
+bg_color = Color(0.05490196, 0.8509804, 0.5882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xa5oe"]
+bg_color = Color(0.05490196, 0.8509804, 0.5882353, 1)
+
+[node name="Controller" type="Node" unique_id=1255440940]
+script = ExtResource("1_xhap2")
+
+[node name="Dark" type="ColorRect" parent="." unique_id=1984743065]
+custom_minimum_size = Vector2(0, 80)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 83.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.48235294)
+
+[node name="Control" type="Control" parent="." unique_id=200041511]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBX" type="VBoxContainer" parent="Control" unique_id=1159613606]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -523.0
+offset_right = 523.0
+offset_bottom = 84.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="HBX" type="HBoxContainer" parent="Control/VBX" unique_id=1159674894]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="edit" type="Button" parent="Control/VBX/HBX" unique_id=1331319225]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+toggle_mode = true
+text = "Edit"
+
+[node name="settings" type="Button" parent="Control/VBX/HBX" unique_id=2146821297]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+script = ExtResource("2_xa5oe")
+
+[node name="about" type="Button" parent="Control/VBX/HBX" unique_id=254521009]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "About"
+script = ExtResource("3_45i6d")
+
+[node name="width" type="Label" parent="Control/VBX/HBX" unique_id=1647760430]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "W:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBX" type="VBoxContainer" parent="Control/VBX/HBX" unique_id=2038492821]
+layout_mode = 2
+alignment = 1
+
+[node name="slider" type="HSlider" parent="Control/VBX/HBX/VBX" unique_id=908185453]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("3_vh704")
+theme_override_icons/grabber_highlight = ExtResource("3_vh704")
+theme_override_styles/slider = SubResource("StyleBoxFlat_evi37")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_vh704")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xa5oe")
+value = 32.0
+
+[node name="height" type="Label" parent="Control/VBX/HBX" unique_id=97844325]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "H:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBX2" type="VBoxContainer" parent="Control/VBX/HBX" unique_id=1887063330]
+layout_mode = 2
+alignment = 1
+
+[node name="slider" type="HSlider" parent="Control/VBX/HBX/VBX2" unique_id=1007682365]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("3_vh704")
+theme_override_icons/grabber_highlight = ExtResource("3_vh704")
+theme_override_styles/slider = SubResource("StyleBoxFlat_evi37")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_vh704")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xa5oe")
+value = 32.0
+
+[node name="reset" type="Button" parent="Control/VBX/HBX" unique_id=106167307]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Reset"
+
+[node name="left" type="Sprite2D" parent="." unique_id=1564462050]
+z_index = -1
+position = Vector2(83, 514.5)
+texture = ExtResource("3_vgpjl")
+centered = false
+
+[node name="hb" type="ColorRect" parent="left" unique_id=1853606297]
+size_flags_horizontal = 4
+color = Color(1, 0.4392157, 1, 0.39215687)
+
+[node name="down" type="Sprite2D" parent="." unique_id=795763620]
+z_index = -1
+position = Vector2(353.5, 513)
+texture = ExtResource("5_vgpjl")
+centered = false
+
+[node name="hb" type="ColorRect" parent="down" unique_id=917371589]
+color = Color(4.235506e-06, 0.837167, 0.83771026, 0.39215687)
+
+[node name="up" type="Sprite2D" parent="." unique_id=601925340]
+z_index = -1
+position = Vector2(789.5, 514)
+texture = ExtResource("7_x0gpg")
+centered = false
+
+[node name="hb" type="ColorRect" parent="up" unique_id=198036921]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -157.0
+offset_bottom = -161.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.34509805, 1, 0.26666668, 0.39215687)
+
+[node name="right" type="Sprite2D" parent="." unique_id=116349182]
+z_index = -1
+position = Vector2(1070, 515.5)
+texture = ExtResource("9_tqt1v")
+centered = false
+
+[node name="hb" type="ColorRect" parent="right" unique_id=1399766349]
+color = Color(0.99999994, 0.29028788, 0.19543949, 0.39215687)
+
+[connection signal="toggled" from="Control/VBX/HBX/edit" to="." method="_on_edit_toggled"]
+[connection signal="button_down" from="Control/VBX/HBX/settings" to="Control/VBX/HBX/settings" method="_on_button_down"]
+[connection signal="button_down" from="Control/VBX/HBX/about" to="Control/VBX/HBX/about" method="_on_button_down"]
+[connection signal="value_changed" from="Control/VBX/HBX/VBX/slider" to="." method="_on_width_value_changed"]
+[connection signal="value_changed" from="Control/VBX/HBX/VBX2/slider" to="." method="_on_height_value_changed"]
+[connection signal="button_down" from="Control/VBX/HBX/reset" to="." method="_on_reset_button_down"]

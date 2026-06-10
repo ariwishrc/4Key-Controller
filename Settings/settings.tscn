@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://cnfkkni62dllt"]
+
+[ext_resource type="Script" uid="uid://c488jaamrw5g0" path="res://Settings/settings.gd" id="1_qeycx"]
+[ext_resource type="Script" uid="uid://chm41s6mhm63o" path="res://Settings/port.gd" id="2_qeycx"]
+[ext_resource type="Script" uid="uid://y02fp2cfv575" path="res://Settings/ip.gd" id="3_3pnvy"]
+
+[node name="Settings" type="Control" unique_id=925015019]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qeycx")
+
+[node name="VBX" type="VBoxContainer" parent="." unique_id=428982279]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Title" type="VBoxContainer" parent="VBX" unique_id=1457708393]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="HBX" type="HBoxContainer" parent="VBX/Title" unique_id=1800530272]
+layout_mode = 2
+alignment = 1
+
+[node name="title" type="Label" parent="VBX/Title/HBX" unique_id=148276105]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 60
+text = "Settings"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="IP" type="HBoxContainer" parent="VBX" unique_id=2091811315]
+layout_mode = 2
+alignment = 1
+
+[node name="VBX" type="VBoxContainer" parent="VBX/IP" unique_id=566908242]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+
+[node name="ip" type="Label" parent="VBX/IP/VBX" unique_id=2014700535]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "IP Address:"
+vertical_alignment = 1
+
+[node name="port" type="Label" parent="VBX/IP/VBX" unique_id=1954804639]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Port:"
+vertical_alignment = 1
+
+[node name="VBX2" type="VBoxContainer" parent="VBX/IP" unique_id=821461732]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+
+[node name="ip" type="LineEdit" parent="VBX/IP/VBX2" unique_id=1062283986]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+placeholder_text = "127.0.0.1"
+script = ExtResource("3_3pnvy")
+
+[node name="port" type="LineEdit" parent="VBX/IP/VBX2" unique_id=1518184415]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+placeholder_text = "8000"
+context_menu_enabled = false
+emoji_menu_enabled = false
+middle_mouse_paste_enabled = false
+virtual_keyboard_type = 2
+script = ExtResource("2_qeycx")
+
+[node name="HBX" type="HBoxContainer" parent="VBX" unique_id=669653081]
+layout_mode = 2
+alignment = 1
+
+[node name="back" type="Button" parent="VBX/HBX" unique_id=1633800732]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[connection signal="text_changed" from="VBX/IP/VBX2/ip" to="VBX/IP/VBX2/ip" method="_on_text_changed"]
+[connection signal="text_changed" from="VBX/IP/VBX2/port" to="VBX/IP/VBX2/port" method="_on_text_changed"]
+[connection signal="button_down" from="VBX/HBX/back" to="." method="_on_back_button_down"]
