@@ -8,15 +8,10 @@ https://github.com/user-attachments/assets/d189b039-b7ab-49b6-a115-0fe8345a29be
 > Still in a basic prototype but usable for playing games that needs up to 4-key
 </div>
 
----
-
-
 
 ## Requirements
 To use 4Key Controller, you also need to install and run the **4Key Server** on your PC.  
 Get it here: [github.com/ariwishrc/4Key-Server](https://github.com/ariwishrc/4Key-Server)
-
----
 
 ## How to Run
 1. Clone and run the [4Key Server](https://github.com/ariwishrc/4Key-Server)
@@ -26,7 +21,6 @@ Get it here: [github.com/ariwishrc/4Key-Server](https://github.com/ariwishrc/4Ke
 5. Remember to use the same port in this mobile app and the server
 6. Done!
 
----
  
 ## Inputs Not Registering?
  
@@ -44,8 +38,6 @@ System Settings -> Network -> Firewall -> Options -> Add the 4Key Server app and
 ```
 sudo ufw allow 8000
 ```
- 
----
 
 ## Contributing
 As this project is still a massive W.I.P prototype, the codebase is subject to major structural changes. 
@@ -54,8 +46,6 @@ Contributions are currently on hold until the features marked as **crucial** bel
 ### Devs Notes
 - You can run the project in godot without a phone, since they are on the same device use IP 127.0.0.1.
 - You can also use [Godot one-click deploy](https://docs.godotengine.org/en/stable/tutorials/export/one-click_deploy.html) for testing.
-
----
 
 ## Features Plan
 
